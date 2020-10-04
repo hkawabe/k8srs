@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: dovecot-claim
+spec:
+  selector:
+    matchLabels:
+      name: dovecot-pv
+  resources:
+    requests:
+      storage: 1Gi
+  accessModes:
+  - ReadWriteMany
+  storageClassName: ""

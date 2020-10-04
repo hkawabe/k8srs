@@ -1,0 +1,19 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: dovecot-pv
+  labels:
+    name: dovecot-pv
+    type: nfs
+    speed: slow
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+  - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  # storageClassName:
+  nfs:
+    server: 192.168.5.1
+    path: /volume1/raspik8s/vmail
